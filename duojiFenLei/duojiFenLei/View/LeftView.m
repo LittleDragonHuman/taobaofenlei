@@ -60,7 +60,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(selectedSection:scrollRow:)]) {
-        [self.delegate selectedSection:indexPath.section scrollRow:0];
+        [self.delegate selectedSection:indexPath.row scrollRow:0];
     }
 }
 @end

@@ -33,14 +33,14 @@
         self.leftView = [[LeftView alloc] initWithFrame:CGRectMake(0, 0, 100, self.view.frame.size.height) andViewModel:viewModel];
         self.leftView.delegate = self;
         [self.view addSubview:self.leftView];
-        self.rightView = [[RightView alloc] initWithFrame:CGRectMake(100, 0, self.view.frame.size.width - 100, self.view.frame.size.height) andViewModel:viewModel];
+        self.rightView = [[RightView alloc] initWithFrame:CGRectMake(100, 70, self.view.frame.size.width - 100, self.view.frame.size.height) andViewModel:viewModel];
         [self.view addSubview:self.rightView];
     }];
 }
 
 - (void)selectedSection:(NSInteger)section scrollRow:(NSInteger)row
 {
-    
+    [self.rightView scrollViewToSection:section row:row];
 }
 
 - (void)didReceiveMemoryWarning {

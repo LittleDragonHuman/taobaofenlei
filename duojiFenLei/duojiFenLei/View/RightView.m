@@ -73,4 +73,16 @@
     return cell;
 }
 
+- (void)scrollViewToSection:(NSInteger)section row:(NSInteger)row
+{
+    if (section >= self.viewModel.rightViewModelArray.count || section < 0) {
+        return;
+    }
+    NSDictionary *dic = self.viewModel.rightViewModelArray[section];
+    NSMutableArray *array = dic[@"elements"];
+    if (row >= array.count || row < 0) {
+        return;
+    }
+    [self.collectionview scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+}
 @end

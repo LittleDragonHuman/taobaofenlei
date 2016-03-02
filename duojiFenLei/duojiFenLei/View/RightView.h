@@ -11,6 +11,8 @@
 
 @interface RightView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame andViewModel:(ViewModel *)viewModel;;
+- (instancetype)initWithFrame:(CGRect)frame andViewModel:(ViewModel *)viewModel;
+
+- (void)scrollViewToSection:(NSInteger)section row:(NSInteger)row;
 
 @end
